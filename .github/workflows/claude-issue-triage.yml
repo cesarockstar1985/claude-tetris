@@ -52,8 +52,18 @@ jobs:
                Si el issue fue editado y algún label que ya tiene dejó de aplicar, quítalo con
                `gh issue edit ${{ github.event.issue.number }} --remove-label "label"`.
                No crees labels nuevos.
-            5. Escribe el diagnóstico en el archivo `.triage/diagnosis.md` (en español, Markdown).
+            5. Escribe el diagnóstico en el archivo `.triage/diagnosis.md` (en español).
                No publiques comentarios tú mismo; un paso posterior lo publica.
+
+            Formato obligatorio: el contenido se publica tal cual como comentario de GitHub, así que
+            debe ser GitHub Flavored Markdown válido que GitHub renderice correctamente:
+            - Encabezados con `##` / `###`, listas con `-`, checklists con `- [ ]`.
+            - Código, nombres de funciones y rutas entre comillas invertidas (`` `game.js:120` ``);
+              bloques de código con triple comilla invertida y lenguaje (```js).
+            - Tablas GFM si ayudan (`| col | col |` con fila separadora `|---|---|`).
+            - Deja una línea en blanco antes y después de encabezados, listas, tablas y bloques de código.
+            - No uses HTML (salvo `<details>` si hace falta plegar contenido largo), ni envuelvas
+              todo el documento en un bloque de código.
 
             Formato del diagnóstico (usa exactamente estas secciones):
 
